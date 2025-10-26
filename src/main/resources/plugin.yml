@@ -1,0 +1,13 @@
+name: Artifacts
+version: '1.0-SNAPSHOT'
+main: org.akorpuzz.artifacts.Artifacts
+api-version: '1.21'
+commands:
+  sword:
+    description: Te da una espada
+    usage: /<command>
+    aliases:
+      -s
+  artifacts:
+    description: Abre el menu de artefactos
+    usage: /<command>
