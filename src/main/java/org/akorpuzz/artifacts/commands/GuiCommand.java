@@ -1,26 +1,20 @@
 package org.akorpuzz.artifacts.commands;
 
 import org.akorpuzz.artifacts.ArtifactManager;
+import org.akorpuzz.artifacts.Artifacts;
+import org.akorpuzz.artifacts.Features.SellStickFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-
-
-import java.util.ArrayList;
-import java.util.*;
 
 public class GuiCommand implements CommandExecutor{
+
+
     @Override
     public boolean onCommand( CommandSender sender,  Command command,  String label,  String[] args) {
 
@@ -30,8 +24,16 @@ public class GuiCommand implements CommandExecutor{
 
             //agregar artefactos al Gui desde ArtifactManager
             Giver.setItem(0, ArtifactManager.getTestStick());
-            Giver.setItem(1,ArtifactManager.getHarvesterHoe());
+            ItemStack harvesterHoe = ArtifactManager.HARVESTER_HOE(plugin.getHarvesterUses(), plugin);
+            Giver.setItem(1, harvesterHoe);
             Giver.setItem(2,ArtifactManager.getTrueHarvesterHoe());
+            Giver.setItem(3, SellStickFactory.createSellStick10(this.plugin));
+            Giver.setItem(4, SellStickFactory.createSellStick25(this.plugin));
+            Giver.setItem(5, SellStickFactory.createSellStick50(this.plugin));
+            Giver.setItem(6, org.akorpuzz.artifacts.TotemFactory.createTotemTier1(this.plugin));
+            Giver.setItem(7, org.akorpuzz.artifacts.TotemFactory.createTotemTier2(this.plugin));
+            Giver.setItem(8, org.akorpuzz.artifacts.TotemFactory.createTotemTier3(this.plugin));
+
 
             //abrir inventario
             player.openInventory(Giver);
@@ -39,6 +41,12 @@ public class GuiCommand implements CommandExecutor{
         }
 
         return true;
+    }
+    //buen fragmento de codigo
+    private Artifacts plugin;
+
+    public GuiCommand(Artifacts plugin) {
+        this.plugin = plugin;
     }
 
 }

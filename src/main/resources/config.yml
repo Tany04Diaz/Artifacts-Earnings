@@ -1,0 +1,70 @@
+##Displayname
+##harvester:
+
+##mensajes
+  messages:
+    harvester_consumed: "&cLa Harvester Hoe está desgastada."
+    not_mature: "&7El cultivo no está listo para cosechar."
+
+
+  ##Precios
+  prices:
+    WHEAT: 0.5
+    POTATO: 0.2
+    CARROT: 0.25
+    BEETROOT: 0.3
+    SUGAR_CANE: 0.15
+
+  ##artefactos
+  Harvester-hoe:
+    uses: 100
+    HarvestBlocks:
+      -SHUGAR_CANE
+
+  sellstick:
+    displayName: "&6SellStick &7- &e%uses% usos"
+    messages:
+      not_container: "&cEso no es un contenedor."
+      nothing_to_sell: "&eNo hay items vendibles en el cofre."
+      no_economy: "&cProveedor de economía no disponible. Ventas deshabilitadas."
+      sold: "&aVendiste %amount% items del cofre por %money%."
+      broken: "&cTu SellStick se ha roto."
+
+  totem:
+    material: STRIPPED_OAK_LOG
+    pdc_key: crop_totem_tier
+    apply_interval_ticks: 40          # cada cuánto se aplica(40 = 2s)
+    particle:
+      type: VILLAGER_HAPPY
+      count: 6
+      spread: 0.6
+    tiers:
+      1:
+        radius: 4
+        multiplier: 1.5       # factor de crecimiento (1.0 = normal, >1 acelera)
+        extraChance: 0.25     # probabilidad adicional por intervalo (0-1)
+      2:
+        radius: 10
+        multiplier: 2.0
+        extraChance: 0.45
+      3:
+        radius: 25
+        multiplier: 3.0
+        extraChance: 0.75
+    worlds_allowed:
+      - world
+    debug: false
+
+# lista de cultivos que se consideran Ageable
+  crop_whitelist:
+    - WHEAT
+    - POTATO
+    - CARROT
+    - BEETROOT
+    - SUGAR_CANE
+    - CACTUS
+
+
+
+
+
