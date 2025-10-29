@@ -31,13 +31,12 @@ Está pensada para ser modular, configurable por admins y fácil de integrar en 
 - Persistencia: el item Totem lleva el tier en PDC; al colocarlo el listener registra la ubicación; al romperlo se elimina el registro. (Opcional: persistencia entre reinicios en archivo YAML).
 - Consideraciones de rendimiento: radios grandes requieren batching, throttling y tuning del intervalo; el plugin ofrece opciones para ajustar frecuencia y alcance.
   # Config
-  **prices:
+  ´´´prices:
   WHEAT: 0.5
   POTATO: 0.2
   CARROT: 0.25
   SUGAR_CANE: 0.15
-  **
-  **
+  
   harvester:
   displayName: "&6Harvester Hoe &7- &e%uses% usos"
   uses_default: 100
@@ -45,15 +44,13 @@ Está pensada para ser modular, configurable por admins y fácil de integrar en 
     mode_sell: "&eModo: VENDER"
     mode_collect: "&eModo: RECOLECTAR"
 
-  **
-**
+
 sellstick:
   displayName: "&6SellStick &7- &e%uses% usos"
   messages:
     sold: "&aVendiste %amount% items del cofre por %money%."
 
-**
-**
+
 totem:
   material: STRIPPED_OAK_LOG
   pdc_key: crop_totem_tier
@@ -79,4 +76,4 @@ crop_whitelist:
   - SUGAR_CANE
   - CACTUS
 
-**
+´´´´
